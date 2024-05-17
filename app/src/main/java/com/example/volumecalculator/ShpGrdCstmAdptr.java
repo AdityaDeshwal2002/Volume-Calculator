@@ -13,10 +13,10 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class shpGrdCstmAdptr extends ArrayAdapter<Shape> {
+public class ShpGrdCstmAdptr extends ArrayAdapter<Shape> {
     private Context context;
     private ArrayList<Shape> shapeArrayList = new ArrayList<Shape>();
-    public shpGrdCstmAdptr(@NonNull Context context, ArrayList<Shape> shapeArrayList) {
+    public ShpGrdCstmAdptr(@NonNull Context context, ArrayList<Shape> shapeArrayList) {
         super(context,R.layout.cstm_grd_layout);
         this.context = context;
         this.shapeArrayList = shapeArrayList;
