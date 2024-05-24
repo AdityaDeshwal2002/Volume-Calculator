@@ -17,7 +17,7 @@ public class ShpGrdCstmAdptr extends ArrayAdapter<Shape> {
     private Context context;
     private ArrayList<Shape> shapeArrayList = new ArrayList<Shape>();
     public ShpGrdCstmAdptr(@NonNull Context context, ArrayList<Shape> shapeArrayList) {
-        super(context,R.layout.cstm_grd_layout);
+        super(context,R.layout.cstm_grd_layout,shapeArrayList);
         this.context = context;
         this.shapeArrayList = shapeArrayList;
     }

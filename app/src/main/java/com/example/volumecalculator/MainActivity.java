@@ -1,7 +1,12 @@
 package com.example.volumecalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Shape> shapeArrayList = new ArrayList<Shape>();
     GridView gridView;
     ShpGrdCstmAdptr shpGrdCstmAdptr;
+    int index = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +44,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = view.findViewById(R.id.name);
+                String tv = textView.getText().toString();
+                if ( ((TextView)view.findViewById(R.id.name)).getText().toString() == "Sphere"){
+                    Intent intent = new Intent(MainActivity.this, Sphere.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
+
+
 }
